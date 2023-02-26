@@ -1,0 +1,21 @@
+Assignment 1: Library
+
+Create a new class called Library that uses a private string array to store the list of books
+and supports the following functions:
+
+// Add a new book
+// returns true for success, false if the book is already in the library
+bool AddBook(const std::string &name);
+
+// Remove a book
+// Returns true for success, false if the book is not in the library
+bool RemoveBook(const std::string &name);
+
+// List all the books in the Library
+void ListAllBooks() const;
+
+// Returns true if the book is in the library, false otherwise
+bool IsInLibrary(const std::string &name) const;
+
+// Friend function used to print the library name and the list of books
+friend std::ostream &operator<<(std::ostream &out, const Library &lib);

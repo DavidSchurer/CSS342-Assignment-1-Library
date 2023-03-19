@@ -1,11 +1,11 @@
 //Name: David Schurer
 //Class: CSS 342
 //Assignment 1: Library
-
 #include <iostream>
 #include <string>
-#include "Library.h"
+#include "library.h"
 using namespace std;
+
 // Library constructor used to initialize libraryName and numberOfBooks
 Library::Library(string libName) {
     libraryName = libName;
@@ -55,7 +55,7 @@ bool Library::RemoveBook(const string &bookName) {
     return false; // Return false if that book was not found in the library
 }
 
-// Method defintion for the ListAllBooks method
+// Method definition for the ListAllBooks method
 void Library::ListAllBooks() const {
     cout << "List of All Books In The Library:\n";
     // Iterate through the books array and if the index of the array is not empty, print out the book name
@@ -91,3 +91,9 @@ bool Library::IsInLibrary(const string &bookName) {
 
 
     }
+
+// The overloaded output operator will print all of the books in the library to the output screen
+ostream& operator<<(ostream& out, const Library &lib) {
+        lib.ListAllBooks();
+        return out;
+}

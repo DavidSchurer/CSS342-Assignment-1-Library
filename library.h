@@ -1,10 +1,8 @@
 //Name: David Schurer
 //Class: CSS 342
 //Assignment 1: Library
-
 #ifndef LIBRARY_H
 #define LIBRARY_H
-
 #include <iostream>
 using namespace std;
 
@@ -12,7 +10,7 @@ using namespace std;
 class Library {
 
     public:
-
+        // The library default constructor passes in the library name as its parameter
         Library(string libName);
 
         // Add a new book
@@ -29,13 +27,12 @@ class Library {
         // Return true if book in library, false otherwise
         bool IsInLibrary(const string &bookName);
 
-        // friend function
-        friend ostream& operator<<(ostream& out, const Library &lib) {
-            lib.ListAllBooks();
-            
-        }
+        // The library overloaded output operator is used to print out all of the books in the library
+        friend ostream& operator<<(ostream& out, const Library &lib);
 
     private:
+        // Private variables declared to represent the name of each book, the library name, number of books in the library,
+        // maximum number of books that can be stored in the library, and the array of books itself
         string name;
         string libraryName;
         static const int MAX_BOOKS = 100;

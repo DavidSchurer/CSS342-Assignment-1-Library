@@ -1,10 +1,10 @@
 //Name: David Schurer
 //Class: CSS 342
 //Assignment 1: Library
-
 #include <iostream>
 #include <cassert>
-#include "Library.h"
+#include <string>
+#include "library.h"
 
 void Test1() {
 
@@ -15,9 +15,7 @@ Library libs("UWB");
 libs.AddBook("Don Quixote");
 libs.AddBook("In Search of Lost Time");
 libs.AddBook("The Odyssey");
-//libs.ListAllBooks();
 cout << libs;
-
 
 // should generate already in library message and return true
 bool result = libs.IsInLibrary("The Odyssey");
